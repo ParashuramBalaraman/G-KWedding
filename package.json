@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3"
+  },
+  "name": "g-kwedding",
+  "description": "Gavin and Kaviya's wedding website",
+  "version": "1.0.0",
+  "main": "wedRSVP.js",
+  "scripts": {
+    "start": "nodemon wedRSVP.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

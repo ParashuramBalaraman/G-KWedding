@@ -189,14 +189,13 @@
         <div class = "row wow animate__animated animate__fadeInUp animate__slow">
           <div class = "contact-left">
             <h1 style="font-size:x-large;">RSVP Here</h1>
-            <form>
-              <input type = "text" class = "form-control" placeholder="Family Name" id="name" required>
-              <input type = "text" class = "form-control" placeholder="Number of people attending", required>
-              <input type = "text" class = "form-control" placeholder="Dietary requirements">
-              <input type = "text" class = "form-control" placeholder="Phone number", required>
-              <textarea placeholder="Message" rows = "6"></textarea>
+            <form method="post" action="/">
+              <input type = "text" class = "form-control" name = "name" placeholder="Family Name" id="name" required>
+              <input type = "text" class = "form-control" name = "attendees" placeholder="Number of people attending", required>
+              <input type = "text" class = "form-control" name = "requirements" placeholder="Dietary requirements">
+              <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
+              <textarea placeholder="Message" name = "message" rows = "6"></textarea>
               <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button>
-              
             </form>
           </div>
           
