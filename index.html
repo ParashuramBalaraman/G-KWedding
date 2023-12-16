@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Design.Diva</title>
+    <title>G&K</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- normalize css -->
@@ -41,7 +41,7 @@
 
       <div class = "hero-div center container">
         <h1>Gavin and Kaviya</h1>
-        <p class = "animate__animated animate__fadeInUp animate__slow">{Date}</p>
+        <p class = "animate__animated animate__fadeInUp animate__slow">7th June 2025</p>
 
         <div class = "hero-btns animate__animated animate__fadeInUp animate__slow">
           <button type = "button" class = "btn-trans" onclick="scrollToRSVP()">RSVP</button>
@@ -52,6 +52,9 @@
                 if (rsvpSection) {
                     rsvpSection.scrollIntoView({ behavior: "smooth" });
                 }
+            }
+            function toRSVP() {
+              window.location.href = 'RSVP.html';
             }
             </script>
           <button type = "button" class = "btn-white">More Photos</button>
@@ -175,37 +178,17 @@
     </section>
     <!-- end of engagement photos section -->
 
-    
-    <!-- Details section -->
-    <section class = "testimonial" id = "details">
-      <div class = "container">
-        <div class = "title">
-          <h2 class = "wow animate__animated animate__bounceIn animate__slow">{Name of Venue}</h2>
-          <p class = "text">{Address of Venue}</p>
-        </div>
-
-        <div>
-          <div class = "testimonial-item">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21471.80188783042!2d174.70659162693673!3d-36.87114721021025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d471054e80c29%3A0x9682a1fdcfcf088a!2sGlasshouse%20Morningside!5e0!3m2!1sen!2snz!4v1697936692523!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p style="padding-top:2%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
-            <span>Someone's Name</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end of details section -->
-
     <!-- rsvp section -->
     <section class = "contact" id = "rsvp">
       <div class = "container">
         <div class = "title">
           <h2 class = "wow animate__animated animate__bounceIn animate__slow">RSVP</h2>
-          <p class = "text">RSVP for the wedding ceremony</p>
+          <h3 class = "text">Venue: Shri Shirdi SaiBaba's Mandir</h3>
+          <h3 class = "text">Address: 12/18 Princes Street, Onehunga, Auckland 1061</h3>
         </div>
-
         <div class = "row wow animate__animated animate__fadeInUp animate__slow">
           <div class = "contact-left">
-            <h2>Send Message Here</h2>
+            <h1 style="font-size:x-large;">RSVP Here</h1>
             <form>
               <input type = "text" class = "form-control" placeholder="Family Name" id="name" required>
               <input type = "text" class = "form-control" placeholder="Number of people attending", required>
@@ -219,12 +202,13 @@
           
 
           <div class = "contact-right">
+            <h1 style="font-size:x-large;">Alternatively you can RSVP by:</h1>
             <div>
-              <h2>Call Us</h2>
-              <p class = "text">0033-2332=8448 / 8320-2838-0000</p>
+              <h2>Calling us</h2>
+              <p class = "text">021 1266 941</p>
             </div>
             <div>
-              <h2>Send Email</h2>
+              <h2>Sending an Email</h2>
               <p class = "text">design.diva@gmail.com</p>
             </div>
           </div>
