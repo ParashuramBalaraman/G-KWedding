@@ -14,6 +14,8 @@
         <link rel = "stylesheet" href = "resources/animate.css-main/animate.css">
         <!-- custom (main) css -->
         <link rel="stylesheet" href="css/main.css">
+        <!-- multiple dropdown -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
       </head>
     
     <!-- Details section -->
@@ -47,11 +49,47 @@
             <div class = "contact-left">
               <h1 style="font-size:x-large;">RSVP Here</h1>
               <form>
-                <input type = "text" class = "form-control" placeholder="Family Name" id="name" required>
-                <input type = "text" class = "form-control" placeholder="Number of people attending", required>
+                <label for = "attendees">Who Is Attending</label>
+              <select name="cars" id="cars" multiple>
+                <option value="Varun">Varun Ghiridharan</option>
+                <option value="Praveen">Praveen Ghiridharan</option>
+                <option value="Sumathy">Sumathy Ghiridharan</option>
+                <option value="Giri">Giri Ghiridharan</option>
+
+                <option value="Victor">Victor Seberatnam</option>
+                <option value="Chooty">Chooty Seberatnam</option>
+                <option value="Jesh">Jesh Seberatnam</option>
+
+                <option value="Asha">Asha Sasikumar</option>
+                <option value="Sasi">Sasi Sasikumar</option>
+                <option value="Kanna">Kanna Sasikumar</option>
+                <option value="Aakash">Aakash Sasikumar</option>
+                <!-- Check Last names -->
+                <option value="Vijiyan">Vijiyan Senthu</option> 
+                <option value="Shankari">Shankari Senthu</option>
+                <option value="Diviyan">Diviyan Senthu</option>
+
+                <option value="Brian">Brian Rodricks</option>
+                <option value="Dushi">Dushi Rodricks</option>
+                <option value="Nishanth">Nishanth Rodricks</option>
+                <option value="Prashanth">Prashanth Rodricks</option>
+                <option value="Akshita">Akshita Prashanth</option>
+
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+                <option value="Gabby">Gabby Seberatnam</option>
+              </select>
+              <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+              <script>
+                new MultiSelectTag('cars')
+              </script>
                 <input type = "text" class = "form-control" placeholder="Dietary requirements">
                 <input type = "text" class = "form-control" placeholder="Phone number", required>
-                <textarea placeholder="Message" rows = "6"></textarea>
                 <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button>
                 
               </form>
