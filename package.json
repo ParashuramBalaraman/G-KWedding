@@ -4,6 +4,9 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "name": "g-kwedding",
   "description": "Gavin and Kaviya's wedding website",
   "version": "1.0.0",
