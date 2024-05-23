@@ -36,6 +36,7 @@ app.post("/", function(req, res){
     res.redirect("/");
 })
 
-app.listen(3000, function() {
+const port = process.env.PORT || 3000;
+app.listen(port, function() {
     console.log("server is running on 3000");
 })
