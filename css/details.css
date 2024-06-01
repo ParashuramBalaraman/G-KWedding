@@ -1,0 +1,43 @@
+:root{
+    --mount-meadow: #AD8E6D;
+    --white-smoke: #f0f0f0;
+    --night-rider: #B8CACD;
+    --black: #191b17;
+    --transition: all 0.5s ease-in-out;
+}
+*{
+    font-family: 'Hind Siliguri', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    background-color: #e6e9e38c;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url(/assets/GreatVibes-Regular.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0.6rem 0;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 100px;
+    font-family: 'CustomFont';
+    text-align: center;
+}

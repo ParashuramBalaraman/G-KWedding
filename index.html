@@ -45,6 +45,10 @@
 
         <div class = "hero-btns animate__animated animate__fadeInUp animate__slow">
           <button type = "button" class = "btn-trans" onclick="scrollToRSVP()">RSVP</button>
+          <button type = "button" class = "btn-white" onclick="openPhotos()">More Photos</button>
+          <div style="padding: 3%;">
+            <button type = "button" class = "btn-alt" onclick="openDetails()">Wedding Details</button>
+          </div>
           <script>
             function scrollToRSVP() {
                 var rsvpSection = document.getElementById("rsvp");
@@ -53,11 +57,16 @@
                     rsvpSection.scrollIntoView({ behavior: "smooth" });
                 }
             }
-            function toRSVP() {
-              window.location.href = 'RSVP.html';
+
+            function openPhotos(){
+              window.location.href = 'https://drive.google.com/drive/folders/1-nl8_8fMAEJq9_a9u69vAwSBoaMlM-HU?usp=sharing'
             }
+
+            function openDetails() {
+              window.location.href = 'details.html';
+            }
+
             </script>
-          <button type = "button" class = "btn-white">More Photos</button>
         </div>
       </div>
     </header>
