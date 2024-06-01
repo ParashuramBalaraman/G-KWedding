@@ -20,6 +20,14 @@ html{
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: 'CustomFont';
+    src: url(/assets/GreatVibes-Regular.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-size: xx-large;
+}
+
 /* setup & reusable stylings */
 img{
     width: 100%;
@@ -47,6 +55,10 @@ h1, h2, h3, h4, h5, h6{
     line-height: 1.25;
     font-weight: 400;
     text-transform: capitalize;
+}
+
+h1{
+    font-family: 'CustomFont';
 }
 .text{
     margin: 0.6rem 0;
@@ -136,10 +148,13 @@ section{
     flex: 1;
     flex-direction: column;
     text-align: center;
+    width:100%
 }
 .hero-div h1{
     font-size: 2.55rem;
     padding-bottom: 0.4rem;
+    white-space: nowrap;
+    text-align: center;
 }
 .hero-div p{
     color: var(--white-smoke);
