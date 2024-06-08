@@ -57,6 +57,11 @@ h1, h2, h3, h4, h5, h6{
     text-transform: capitalize;
 }
 
+h0{
+    font-size: 630%;
+    font-family: 'CustomFont';
+}
+
 
 .text{
     margin: 0.6rem 0;
@@ -329,6 +334,50 @@ section{
 }
 
 /* #### Media Queries #### */
+
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .hero-div h1 {
+        font-size: 2rem;
+    }
+
+    .hero-div p {
+        font-size: 0.9rem;
+    }
+
+    .title h2 {
+        font-size: 1.8rem;
+    }
+
+    .title .text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .hero-div h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-div p {
+        font-size: 0.8rem;
+    }
+
+    .title h2 {
+        font-size: 1.5rem;
+    }
+
+    .title .text {
+        font-size: 0.9rem;
+    }
+}
 
 @media screen and (min-width: 768px){
     .detail .row{
