@@ -20,8 +20,41 @@ html{
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
     background-color: var(--dark-color);
-    overflow: hidden;
+    overflow-x: hidden;
     height: 100%;
+}
+
+button{
+    cursor: pointer;
+    outline: 0;
+    background: transparent;
+}
+
+/*buttons*/
+
+.hero-btns{
+    margin-top: 0.8rem;
+}
+.hero-btns button{
+    border: 3.5px solid var(--mount-meadow);
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+}
+
+.btn-trans{
+    color: #fff;
+    transition: var(--transition);
+}
+.btn-trans:hover{
+    background: var(--mount-meadow);
+    border-color: var(--mount-meadow);
+}
+
+.button-container{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
 }
 
 @font-face {
@@ -45,10 +78,6 @@ h1 {
     text-align: center;
 }
 
-h2{
-    color: #e0a684;
-}
-
 p {
     font-size: 150%;
     text-align: center;
@@ -56,6 +85,14 @@ p {
 
 h2{
     font-size: 180%;
+    text-align: center;
+}
+
+h3{
+    color: #e0a684;
+    font-family: 'CustomFont';
+    font-size: 165%;
+    padding-top: 0%;
     text-align: center;
 }
 
@@ -77,36 +114,19 @@ body{
     overflow: auto;
 }
 
-.outer-border {
-	border: 2px solid #DE9B72;
-   	height: 99%;
-    width: 98%;
-    padding: 6px;
-    margin: 0 auto;
+.event-container {
+    width: 25%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 10px; /* Optional: Add some padding around each container */
+    overflow: hidden; /* Hide overflow if needed */
 }
 
-@media (min-width: 992px) {
-	.outer-border {
-		height: 94%;
-	}
+.events-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if there are more than three containers */
+    justify-content: space-between; /* Add space between items if needed */
+    padding: 20px; /* Optional: Add some padding around the wrapper */
 }
-
-.mid-border {
-    border: 6px solid #DE9B72;
-    height: 100%;
-    width: 100%;
-    padding: 6px;
-    margin: auto;
-}
-
-.inner-border {
-	position: relative;
-	border: 2px solid #DE9B72;
-    height: 100%;
-    width: 100%;
-    margin: auto;
-}
-
 
 /* Decorations */
 .corner-decoration {
@@ -235,8 +255,40 @@ body{
         font-size: 1.2rem;
     }
 
+    h3{
+        font-size: 1.1;
+    }
+
     .title .text {
         font-size: 1rem;
+    }
+
+    .event-container {
+        width: 100%;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        padding: 10px; /* Optional: Add some padding around each container */
+        overflow: hidden; /* Hide overflow if needed */
+    }
+    
+    .events-wrapper {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping if there are more than three containers */
+        justify-content: space-between; /* Add space between items if needed */
+        padding: 20px; /* Optional: Add some padding around the wrapper */
+    }
+
+    .corner-decoration.corner-right-bottom {
+        right: 0;
+        bottom: 0;
+         -webkit-transform: scale(-1);
+          transform: scale(-1);
+    }
+    
+    .corner-decoration.corner-left-bottom {
+        left: 0;
+        bottom: 0;
+        -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
     }
 }
 

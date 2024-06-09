@@ -27,8 +27,6 @@
     <div>
       <img class="corner-decoration corner-left-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
       <img class="corner-decoration corner-right-top" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
-      <img class="corner-decoration corner-right-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
-      <img class="corner-decoration corner-left-bottom" src="https://i.ibb.co/4mKvK3N/corner-decoration.jpg"></img>
       <img class="vertical-decoration top" src="https://i.ibb.co/JRTK9z4/horizontally-centered-vertical-decoration.png"></img>
     </div>
     <div style="padding-top: 3%;">
@@ -41,12 +39,53 @@
         Start Time: We ask all guests be seated by 9 AM.<br>
         Dress Code: Indian or Western Formal<br>
       </p>
-      <h2>
+      <div class = "hero-btns">
+        <div class="button-container">
+          <button type = "button" class = "btn-trans" onclick="backToHome()">Return To Main Page</button>
+        </div>
+      </div>
+      <script>
+        function backToHome() {
+          window.location.href = 'index.html';
+        }
+      </script>
+      <h2 style="text-align: center; color: #e0a684;">
         <br>
         Here are a few key events of a Tamil wedding
       </h2>
-      <div class="image-container">
-        <img class="itinerary" src="../assets/Wedding Itinerary.png" alt="Wedding Itinerary" >
+      <div class="events-wrapper">
+        <div class="event-container">
+          <h2>Paalikaisthaapanam</h2>
+          <h3>Saving Grains</h3>
+          <p>The ceremony begins with the arrival of the groom accompanied by the tholan (bride’s brother). The bride's family receives the groom and garlands him to welcome 
+            him and his family. The tholan sprinkled the groom’s feet with water, a gesture lavished on an honoured guest. As a token of affection, the groom gifts the tholan 
+            with a gold ring. They both then take their place at the manavarai (wedding altar).</p>
+          <class="itinerary" src="../assets/Wedding Itinerary.png" alt="Wedding Itinerary" >
+        </div>
+        <div class="event-container">
+          <h2>Kanyadhanam</h2>
+          <h3>Giving Away The Bride</h3>
+          <p>This ceremony is significant as the priest proclaims the genealogy of the groom and bride, invoking the celestial to bear witness. The bride’s mother places the bride’s 
+            hands in the palms of the groom. <br>
+            The koorai (bride sari) and thali (sacred gold pendant threaded on a gold chain) are blessed and taken around the congregation for blessing, 
+            The groom presents the koorai to the bride, who will leave to change into it.</p>
+          <class="itinerary" src="../assets/Wedding Itinerary.png" alt="Wedding Itinerary" >
+        </div>
+        <div class="event-container">
+          <h2>The Thaali Ceremony</h2>
+          <h3>The Marriage</h3>
+          <p>The bride returns wearing the koorai and garlands the groom. The solemn moment of the wedding arrives when the groom ties the thali around the bride’s neck, 
+            accompanied by a crescendo of music (to drown out any inauspicious sounds) and a showering of rice mixed with flower petals.</p>
+          <class="itinerary" src="../assets/Wedding Itinerary.png" alt="Wedding Itinerary" >
+        </div>
+        <div class="event-container">
+          <h2>Sapta Padi</h2>
+          <h3>Walking Around The Sacred Fire</h3>
+          <p>The couple take seven steps around the sacred fire in three rounds with the tholan and tholi. After the first round, the groom places the bride’s right foot 
+            on the ammi (granite stone) indicating her steadfastness in the face of life’s adversities. Displaying humility and respect for his bride, he places a 
+            metti (silver toe ring) on the right food. After the second round, he repeats this on the left foot.</p>
+          <class="itinerary" src="../assets/Wedding Itinerary.png" alt="Wedding Itinerary" >
+        </div>
       </div>
     </div>
   </body>
