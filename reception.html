@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RSVP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- normalize css -->
+        <link rel = "stylesheet" href = "resources/normalize.css">
+        <!-- font -->
+        <link rel = "stylesheet" href = "resources/font.css">
+        <!-- animate css -->
+        <link rel = "stylesheet" href = "resources/animate.css-main/animate.css">
+        <!-- custom (main) css -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- multiple dropdown -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css">
+    </head>
+    
+    <body>
+    
+        <!-- Details section -->
+        <section class = "testimonial" id = "details">
+            <div class = "container">
+            <div class = "title">
+                <h2 class = "wow animate__animated animate__bounceIn animate__slow">Markovina Vineyard Estate</h2>
+                <p class = "text">84 Old Railway Road, Kumeū 0892</p>
+            </div>
+        
+            <div>
+                <div class = "testimonial-item">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12782.927366664784!2d174.5755!3d-36.777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d15a54cb8aaff%3A0xd3d93a9e9316b477!2sMarkovina%20Vineyard%20Estate!5e0!3m2!1sen!2snz!4v1702273032887!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p style="padding-top:2%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
+                <span>Someone's Name</span>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- end of details section -->
+        
+        <!-- rsvp section -->
+        <section class = "contact" id = "rsvp">
+            <div class = "container" style="color: var(--black);"> <!-- making the text black for the entire section-->
+            <div class = "title">
+                <h2 class = "wow animate__animated animate__bounceIn animate__slow">RSVP</h2>
+                <p class = "text">RSVP for the wedding ceremony</p>
+            </div>
+        
+            <div class = "row wow animate__animated animate__fadeInUp animate__slow">
+                <div class = "contact-left">
+                <h1 style="font-size:x-large;">RSVP Here</h1>
+                <form method= "post" action="/reception">
+                    <label for = "attendees">Who Is Attending</label>
+                <select name="attendees" id="cars" multiple>
+                    <option value="Varun">Varun Ghiridharan</option>
+                    <option value="Praveen">Praveen Ghiridharan</option>
+                    <option value="Sumathy">Sumathy Ghiridharan</option>
+                    <option value="Giri">Giri Ghiridharan</option>
+
+                    <option value="Victor">Victor Seberatnam</option>
+                    <option value="Chooty">Chooty Seberatnam</option>
+                    <option value="Jesh">Jesh Seberatnam</option>
+
+                    <option value="Asha">Asha Sasikumar</option>
+                    <option value="Sasi">Sasi Sasikumar</option>
+                    <option value="Kanna">Kanna Sasikumar</option>
+                    <option value="Aakash">Aakash Sasikumar</option>
+                    <!-- Check Last names -->
+                    <option value="Vijiyan">Vijiyan Senthu</option> 
+                    <option value="Shankari">Shankari Senthu</option>
+                    <option value="Diviyan">Diviyan Senthu</option>
+
+                    <option value="Brian">Brian Rodricks</option>
+                    <option value="Dushi">Dushi Rodricks</option>
+                    <option value="Nishanth">Nishanth Rodricks</option>
+                    <option value="Prashanth">Prashanth Rodricks</option>
+                    <option value="Akshita">Akshita Prashanth</option>
+
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                    <option value="Gabby">Gabby Seberatnam</option>
+                </select>
+                <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+                <script>
+                    new MultiSelectTag('cars')
+                </script>
+                    <input type = "text" class = "form-control" name = "requirements" placeholder="Dietary requirements">
+                    <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
+                    <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button>
+                    
+                </form>
+                </div>
+                <div class = "contact-right">
+                <h1 style="font-size:x-large;">Alternatively you can RSVP by:</h1>
+                <div>
+                    <h2>Calling us</h2>
+                    <p class = "text">021 1266 941</p>
+                </div>
+                <div >
+                    <h2>Sending an Email</h2>
+                    <p class = "text">design.diva@gmail.com</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- end of rsvp section -->
+    </body>
+</html>

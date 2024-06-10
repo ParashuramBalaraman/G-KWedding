@@ -17,7 +17,7 @@ const rsvpSchema = {
     message: String
 }
 
-const RSVP = mongoose.model("Rsvp", rsvpSchema);
+const wedding = mongoose.model("wedding", rsvpSchema);
 
 app.get("/", function(req, res){
     //res.send("server is working");
@@ -25,7 +25,7 @@ app.get("/", function(req, res){
 })
 
 app.post("/", function(req, res){
-    let newRSVP = new RSVP({
+    let newRSVP = new wedding({
         name: req.body.name,
         attendees: req.body.attendees,
         requirements: req.body.requirements,
@@ -34,6 +34,30 @@ app.post("/", function(req, res){
     })
     newRSVP.save();
     res.redirect("/");
+})
+
+
+const recSchema = new mongoose.Schema({
+    attendees: Array,
+    requirements: String,
+    phone: String,
+});
+
+const reception = mongoose.model("reception", recSchema);
+
+app.get("/reception", function(req, res){
+    //res.send("server is working");
+    res.sendFile(__dirname + "/reception.html");
+})
+
+app.post("/reception", function(req, res){
+    let newRSVP = new reception({
+        attendees: req.body.attendees,
+        requirements: req.body.requirements,
+        phone: req.body.phone,
+    })
+    newRSVP.save();
+    res.redirect("/reception");
 })
 
 const port = process.env.PORT || 3000;
