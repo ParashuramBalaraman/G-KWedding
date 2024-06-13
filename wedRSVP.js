@@ -33,6 +33,7 @@ app.post("/", function(req, res){
         message: req.body.message
     })
     newRSVP.save();
+    window.alert("Thank you for RSVPing to the Wedding")
     res.redirect("/");
 })
 
@@ -57,7 +58,7 @@ app.post("/reception", function(req, res){
         phone: req.body.phone,
     })
     newRSVP.save();
-    res.redirect("/reception");
+    res.redirect("/");
 })
 
 const port = process.env.PORT || 3000;

@@ -21,7 +21,7 @@
     <body>
     
         <!-- Details section -->
-        <section class = "testimonial" id = "details">
+        <section class = "testimonial" id = "details" style="background-image: linear-gradient(rgba(132, 163, 168, 0.8), rgba(132, 163, 168, 1)), url(../assets/markovina.jpg);">
             <div class = "container">
             <div class = "title">
                 <h2 class = "wow animate__animated animate__bounceIn animate__slow">Markovina Vineyard Estate</h2>
@@ -30,7 +30,8 @@
         
             <div>
                 <div class = "testimonial-item">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12782.927366664784!2d174.5755!3d-36.777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d15a54cb8aaff%3A0xd3d93a9e9316b477!2sMarkovina%20Vineyard%20Estate!5e0!3m2!1sen!2snz!4v1702273032887!5m2!1sen!2snz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12782.927366664784!2d174.5755!3d-36.777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d15a54cb8aaff%3A0xd3d93a9e9316b477!2sMarkovina%20Vineyard%20Estate!5e0!3m2!1sen!2snz!4v1702273032887!5m2!1sen!2snz" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <p style="padding-top:2%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta doloribus necessitatibus totam alias unde sint veritatis placeat beatae maiores odio?</p>
                 <span>Someone's Name</span>
                 </div>
@@ -44,7 +45,7 @@
             <div class = "container" style="color: var(--black);"> <!-- making the text black for the entire section-->
             <div class = "title">
                 <h2 class = "wow animate__animated animate__bounceIn animate__slow">RSVP</h2>
-                <p class = "text">RSVP for the wedding ceremony</p>
+                <p class = "text">RSVP for the reception</p>
             </div>
         
             <div class = "row wow animate__animated animate__fadeInUp animate__slow">
@@ -53,38 +54,80 @@
                 <form method= "post" action="/reception">
                     <label for = "attendees">Who Is Attending</label>
                 <select name="attendees" id="cars" multiple>
-                    <option value="Varun">Varun Ghiridharan</option>
+                    <option value="Giri Uncle">Giri Ghiridharan</option>
+                    <option value="Sumathy Aunty">Sumathy Ghiridharan</option>
                     <option value="Praveen">Praveen Ghiridharan</option>
-                    <option value="Sumathy">Sumathy Ghiridharan</option>
-                    <option value="Giri">Giri Ghiridharan</option>
-
-                    <option value="Victor">Victor Seberatnam</option>
-                    <option value="Chooty">Chooty Seberatnam</option>
+                    <option value="Varun">Varun Ghiridharan</option>
+                    
+                    <option value="Victor Uncle">Victor Seberatnam</option>
+                    <option value="Chooty Aunty">Chooty Seberatnam</option>
                     <option value="Jesh">Jesh Seberatnam</option>
 
+                    <option value="Sasi Uncle">Sasi Sasikumar</option>
+                    <option value="Kanna Aunty">Kanna Sasikumar</option>
                     <option value="Asha">Asha Sasikumar</option>
-                    <option value="Sasi">Sasi Sasikumar</option>
-                    <option value="Kanna">Kanna Sasikumar</option>
                     <option value="Aakash">Aakash Sasikumar</option>
+                    <option value="Maheshwari Aunty">Maheshwari Aunty</option>
+
                     <!-- Check Last names -->
-                    <option value="Vijiyan">Vijiyan Senthu</option> 
-                    <option value="Shankari">Shankari Senthu</option>
+                    <option value="Vijiyan Uncle">Vijiyan Senthu</option> 
+                    <option value="Shankari Aunty">Shankari Senthu</option>
                     <option value="Diviyan">Diviyan Senthu</option>
 
-                    <option value="Brian">Brian Rodricks</option>
-                    <option value="Dushi">Dushi Rodricks</option>
+                    <option value="Brian Uncle">Brian Rodricks</option>
+                    <option value="Dushi Aunty">Dushi Rodricks</option>
                     <option value="Nishanth">Nishanth Rodricks</option>
-                    <option value="Prashanth">Prashanth Rodricks</option>
-                    <option value="Akshita">Akshita Prashanth</option>
+                    <option value="Prashanth Anna">Prashanth Rodricks</option>
+                    <option value="Akshita Akka">Akshita Prashanth</option>
 
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
-                    <option value="Gabby">Gabby Seberatnam</option>
+                    <!--Check Last Names-->
+                    <option value="Nithi Uncle">Nithi Nithyanantham</option>
+                    <option value="Gowri Aunty">Gowri Nithyananthan</option>
+
+                    <option value="Ragu Uncle">Ragu Ragu</option>
+                    <option value="Kavitha Aunty">Kavitha Ragu</option>
+                    <option value="Divesh">Divesh Ragu</option>
+                    <option value="Dilshan">Dilshan Ragu</option>
+
+                    <option value="Umasuthan Uncle">Umasuthan ???</option>
+                    <option value="Shamini Aunty">Shamini Umasuthan</option>
+
+                    <option value="Kamshi">Kamshi ???</option>
+                    <option value="AJ (Kamshi)">AJ ???</option>
+
+                    <option value="Devaki Aunty">Devaki ???</option>
+                    <option value="Gaya">Gaya ???</option>
+
+                    <option value="Sabrin Aunty">Sabrin ???</option>
+                    <option value="Hafeez Uncle">Hafeez ???</option>
+
+                    <option value="Nimalan Uncle">Nimalan ???</option>
+                    <option value="Suganthi Aunty">Suganthi Nimalan</option>
+
+                    <option value="Jey">Jeyantha ???</option>
+                    <option value="Kaylah">Mikaylah ???</option>
+                    <option value="Lucy (Friend)">Lucy ???</option>
+                    <option value="Olivia">Olivia ???</option>
+                    <option value="Connor">Connor ???</option>
+                    <option value="AJ">AJ ???</option>
+                    <option value="Riki-Lee">Riki-Lee ???</option>
+                    <option value="Miffy">Miffy ???</option>
+                    <option value="Rochelle">Rochelle ???</option>
+                    <option value="Mikael">Mikael ???</option>
+                    <option value="Ben A">Ben A</option>
+                    <option value="Emily">Emily ???</option>
+                    <option value="Ben B">Ben B</option>
+                    <option value="Eran">Eran ???</option>
+                    <option value="Hamish">Hamish ???</option>
+                    <option value="Rochelle ???">Rochelle ???</option>
+                    <option value="Joe">Joe ???</option>
+                    <option value="Nat">Nat ???</option>
+                    <option value="Alice">Alice ???</option>
+                    <option value="Eli">Eli</option>
+                    <option value="Maddie">Maddie ???</option>
+                    <option value="Pete">Pete ???</option>
+                    <option value="Nikki">Nikki ???</option>
+                    <option value="Mike">Mike ???</option>
                 </select>
                 <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
                 <script>
@@ -92,24 +135,23 @@
                 </script>
                     <input type = "text" class = "form-control" name = "requirements" placeholder="Dietary requirements">
                     <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
-                    <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button>
-                    
+                    <button type = "submit" class = "submit-btn">Send Now</button>
                 </form>
                 </div>
                 <div class = "contact-right">
                 <h1 style="font-size:x-large;">Alternatively you can RSVP by:</h1>
                 <div>
                     <h2>Calling us</h2>
-                    <p class = "text">021 1266 941</p>
+                    <p class = "text">(+64) 021 126 6941</p>
                 </div>
                 <div >
                     <h2>Sending an Email</h2>
-                    <p class = "text">design.diva@gmail.com</p>
+                    <p class = "text">gavinkaviya@gmail.com</p>
                 </div>
                 </div>
             </div>
             </div>
         </section>
-        <!-- end of rsvp section -->
+        <!-- end of rsvp section --> 
     </body>
 </html>
