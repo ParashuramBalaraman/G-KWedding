@@ -137,7 +137,6 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
     z-index: 999;
 }
 .brand-and-toggler{
@@ -157,6 +156,7 @@ section{
 .navbar-toggler{
     border: none;
     color: var(--mount-meadow);
+    display: none;
 }
 .navbar-nav{
     margin: 0.2rem 0 0.6rem 0;
@@ -207,7 +207,6 @@ section{
 .btn-trans{
     color: #fff;
     transition: var(--transition);
-    display: none;
 }
 .btn-trans:hover{
     background: var(--mount-meadow);
@@ -471,9 +470,6 @@ section{
     .navbar-brand{
         color: var(--white-smoke);
         font-size: 2rem;
-    }
-    .navbar-toggler{
-        display: none;
     }
     .navbar-collapse{
         display: block!important;
