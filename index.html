@@ -199,14 +199,49 @@
           <div class = "row wow animate__animated animate__fadeInUp animate__slow">
             <div class = "contact-left">
               <h1 style="font-size:x-large;">RSVP Here</h1>
-              <form method="post" action="/">
+              <form id="rsvpWedding" method="post" action="/" onsubmit="showNotification(event);">
                 <input type = "text" class = "form-control" name = "name" placeholder="Family Name" id="name" required>
                 <input type = "text" class = "form-control" name = "attendees" placeholder="Number of people attending", required>
                 <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
                 <textarea placeholder="Message" name = "message" rows = "6"></textarea>
-                <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button>
+                <button type="submit" class="submit-btn">Send Now</button>
+                <!-- <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button> -->
               </form>
+
+              <!-- Custom Alert Modal -->
+              <div id="customAlert" class="modal">
+                <div class="modal-content">
+                    <div id="alertMessage" style="font-family: 'Hind Siliguri', sans-serif; font-weight: bold;"></div>
+                    <div class="modal-footer">
+                        <button class="close-btn">&times;</button>                        
+                    </div>
+                  </div>
+              </div>
             </div>
+
+            <script>
+              function showNotification(event) {
+                  event.preventDefault();
+                  const form = document.getElementById('rsvpWedding');
+                  const modal = document.getElementById('customAlert');
+                  const closeBtn = document.getElementsByClassName('close-btn')[0];
+                  const alertMessage = document.getElementById('alertMessage');
+
+                  alertMessage.innerHTML = '<p>Thank you for RSVPing to the wedding!</p><h5>We look forward to seeing you on the 7th of June 2025.</h5>';
+                  modal.style.display = 'block';
+          
+                  closeBtn.onclick = function() {
+                      modal.style.display = 'none';
+                      form.submit();
+                  }
+          
+                  window.onclick = function(event) {
+                      if (event.target == modal) {
+                          modal.style.display = 'none';
+                      }
+                  }
+              }
+            </script>
             
 
             <div class = "contact-right">

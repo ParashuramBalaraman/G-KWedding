@@ -54,9 +54,58 @@
             <div class = "row wow animate__animated animate__fadeInUp animate__slow" style="padding-top: 0;">
                 <div class = "contact-left">
                 <h1 style="font-size:x-large;">RSVP Here</h1>
-                <form method= "post" action="/reception">
+                <form id = "rsvpReception" method= "post" action="/reception" onsubmit="showNotification(event)">
                     <label for = "attendees">Who Is Attending</label>
-                <select name="attendees" id="cars" multiple>
+                <select name="attendees" id="guests" multiple>
+
+                    <option value="Mani Uncle">Mani Uncle</option>
+
+                    <option value="Mum">Sam Pearson</option>
+                    <option value="Dad">Tony Pearson</option>
+
+                    <option value="Lucy">Lucy Pearson</option>
+                    <option value="Scott">Scott Johnson</option>
+                    <option value="Gareth">Gareth Pearson</option>
+                    <option value="Jess">Jess Pearson</option>
+                    <option value="Isaac">Isaac Pearson</option>
+                    <option value="Baby2">Oscar Pearson</option>
+                    <option value="Lewis">Lewis Pearson</option>
+                    <option value="Mel">Melanie Rose</option>
+
+                    <option value="Amma">Sumathy Sathiamoorthy</option>
+                    <option value="Patchu">Parashuram Balaraman</option>
+                    <option value="Ammamma">Ammamma</option>
+
+                    <option value="Periamma">Gomathy Kokulan</option>
+                    <option value="Periappa">Kokulan Narasingham</option>
+                    <option value="Ishan">Ishan Kokulan</option>
+                    <option value="Disha">Disha Gomathinayagam</option>
+
+                    <option value="Mama">Gobinathan Sathiamoorthy</option>
+                    <option value="Mami">Aarthi Gobinathan</option>
+                    <option value="Athith">Athith Gobinathan</option>
+                    <option value="Aravinth">Aravinth Gobinathan</option>
+                    <option value="Aniruth">Aniruth Gobinathan</option>
+
+                    <option value="Kola Periamma">Kola Nithi</option>
+                    <option value="Nithi Periappa">Nithi Balasubramaniam</option>
+
+                    <option value="Udhayan Mama">Udhayan Siva</option>
+                    <option value="Shamini Mami">Shamini Udhayakumar</option>
+                    <option value="Abishek">Abishek Udhayakumar</option>
+
+                    <option value="Mayuran Mama">Mayuran Sathiabalan</option>
+                    <option value="Shanthi Mami">Shanthi Mayuran</option>
+                    <option value="Sivakami">Sivakami Mayuran</option>
+                    <option value="Balaji">Balaji Mayuran</option>
+
+                    <option value="Arundha Aunty">Arundha Anandhabavan</option>
+                    <option value="Anandhan Uncle">Anandhan Anandhabavan</option>
+
+                    <option value="Jala Periamma">Jala Easwaran</option>
+                    <option value="Easan Periappa">Easan Easwaran</option>
+                    <option value="Mathura">Mathura Easwaran</option>
+
                     <option value="Giri Uncle">Giri Ghiridharan</option>
                     <option value="Sumathy Aunty">Sumathy Ghiridharan</option>
                     <option value="Praveen">Praveen Ghiridharan</option>
@@ -74,9 +123,9 @@
                     <option value="Maheshwari Aunty">Maheshwari Aunty</option>
 
                     <!-- Check Last names -->
-                    <option value="Vijiyan Uncle">Vijiyan Senthu</option> 
-                    <option value="Shankari Aunty">Shankari Senthu</option>
-                    <option value="Diviyan">Diviyan Senthu</option>
+                    <option value="Vijiyan Uncle">Vijiyan Senthuvijiyan</option> 
+                    <option value="Shankari Aunty">Shankari Senthuvijiyan</option>
+                    <option value="Diviyan">Diviyan Senthuvijiyan</option>
 
                     <option value="Brian Uncle">Brian Rodricks</option>
                     <option value="Dushi Aunty">Dushi Rodricks</option>
@@ -88,59 +137,78 @@
                     <option value="Nithi Uncle">Nithi Nithyanantham</option>
                     <option value="Gowri Aunty">Gowri Nithyananthan</option>
 
-                    <option value="Ragu Uncle">Ragu Ragu</option>
-                    <option value="Kavitha Aunty">Kavitha Ragu</option>
-                    <option value="Divesh">Divesh Ragu</option>
-                    <option value="Dilshan">Dilshan Ragu</option>
+                    <option value="Ragu Uncle">Ragu Ragunathan</option>
+                    <option value="Kavitha Aunty">Kavitha Ragunathan</option>
+                    <option value="Divesh">Divesh Ragunathan</option>
+                    <option value="Dilshan">Dilshan Ragunathan</option>
 
-                    <option value="Umasuthan Uncle">Umasuthan ???</option>
+                    <option value="Umasuthan Uncle">Suthan Umasuthan</option>
                     <option value="Shamini Aunty">Shamini Umasuthan</option>
+                    <option value="Rishi">Rishi Umasuthan</option>
 
-                    <option value="Kamshi">Kamshi ???</option>
-                    <option value="AJ (Kamshi)">AJ ???</option>
+                    <option value="Kamshi">Kamshi Umasuthan</option>
+                    <option value="AJ (Kamshi)">AJ Sridaran</option>
 
-                    <option value="Devaki Aunty">Devaki ???</option>
-                    <option value="Gaya">Gaya ???</option>
+                    <option value="Thevaki Aunty">Thevaki Edwards</option>
+                    <option value="Gaya">Gaya Edwards</option>
 
-                    <option value="Sabrin Aunty">Sabrin ???</option>
-                    <option value="Hafeez Uncle">Hafeez ???</option>
+                    <option value="Sabrin Aunty">Sabrin Hafeez</option>
+                    <option value="Hafeez Uncle">Hafeez Hafeez</option>
 
-                    <option value="Nimalan Uncle">Nimalan ???</option>
+                    <option value="Nimalan Uncle">Nimalan Narasingham</option>
                     <option value="Suganthi Aunty">Suganthi Nimalan</option>
 
-                    <option value="Jey">Jeyantha ???</option>
-                    <option value="Kaylah">Mikaylah ???</option>
-                    <option value="Lucy (Friend)">Lucy ???</option>
-                    <option value="Olivia">Olivia ???</option>
-                    <option value="Connor">Connor ???</option>
-                    <option value="AJ">AJ ???</option>
-                    <option value="Riki-Lee">Riki-Lee ???</option>
-                    <option value="Miffy">Miffy ???</option>
-                    <option value="Rochelle">Rochelle ???</option>
-                    <option value="Mikael">Mikael ???</option>
-                    <option value="Ben A">Ben A</option>
-                    <option value="Emily">Emily ???</option>
-                    <option value="Ben B">Ben B</option>
-                    <option value="Eran">Eran ???</option>
-                    <option value="Hamish">Hamish ???</option>
-                    <option value="Rochelle ???">Rochelle ???</option>
-                    <option value="Joe">Joe ???</option>
-                    <option value="Nat">Nat ???</option>
-                    <option value="Alice">Alice ???</option>
-                    <option value="Eli">Eli</option>
-                    <option value="Maddie">Maddie ???</option>
-                    <option value="Pete">Pete ???</option>
-                    <option value="Nikki">Nikki ???</option>
-                    <option value="Mike">Mike ???</option>
+                    <option value="Kalaivany Aunty">Kalaivany Ganeshamoorthy</option>
+
+                    <option value="Sridhar Uncle">Sridhar Rajaram</option>
+                    <option value="Venugopal Uncle">Venugopal S.P.</option>
+
+                    <option value="Jey">Jey Jeyaseelan</option>
+                    <option value="Kaylah">Kaylah McBirney</option>
+                    <option value="Lucy (Friend)">Lucy Qiu</option>
+                    <option value="Olivia">Olivia Pottor</option>
+                    <option value="Connor">Connor Blair</option>
+                    <option value="AJ">AJ Hawkins</option>
+                    <option value="Riki-Lee">Riki-Lee Waititi-Unsworth</option>
+                    <option value="Miffy">Miffy Barling</option>
+                    <option value="Bilal">Bilal Nasier</option>
+                    <option value="Kasey">Kasey Nasier</option>
+                    <option value="Liam">Liam Polglase</option>
+                    <option value="Katie">Annaliese Wheat</option>
+                    <option value="Jade">Jade Anderson</option>
+                    <option value="Javiera">Javiera Sanchez</option>
+                    <option value="Sophie">Sophie Richards</option>
+                    <option value="Linda">Linda Duong</option>
+                    <option value="Holly">Holly Milton</option>
+                    <option value="Brooke">Brooke Armstrong</option>
+                    <option value="Zoe">Zoe Henry</option>
+                    <option value="Vera">Vera Lee</option>
+
+                    <option value="Ben A">Ben Allison</option>
+                    <option value="Emily">Emily Coe</option>
+                    <option value="Ben B">Ben Wakelin</option>
+                    <option value="Eran">Eran Waldeck</option>
+                    <option value="Hamish">Hamish Armour</option>
+                    <option value="Rochelle">Rochelle Dafel</option>
+                    <option value="Joe">Joe Speirs</option>
+                    <option value="Nat">Nat Wellstead</option>
+                    <option value="Alice">Alice Wellstead</option>
+                    <option value="Eli">Eli Wellstead</option>
+                    <option value="Maddie">Maddie Hearn</option>
+                    <option value="Pete">Pete Cable</option>
+                    <option value="Nikki">Nikki Sinclair</option>
+                    <option value="Mike">Mike Armour</option>
                 </select>
                 <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
                 <script>
-                    new MultiSelectTag('cars')
+                    new MultiSelectTag('guests')
                 </script>
                     <input type = "text" class = "form-control" name = "requirements" placeholder="Dietary requirements">
                     <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
                     <button type = "submit" class = "submit-btn">Send Now</button>
                 </form>
+
+
                 </div>
                 <div class = "contact-right">
                 <h1 style="font-size:x-large;">Alternatively you can RSVP by:</h1>
@@ -153,5 +221,71 @@
             </div>
         </section>
         <!-- end of rsvp section --> 
+
+        <div id="customConfirm" class="modal">
+            <div class="modal-content">
+                <div id="confirmMessage" style="font-family: 'Hind Siliguri', sans-serif; font-weight: bold;"></div>
+                <div class="modal-footer">
+                    <button id="confirmYes" class="confirm-leave">Return to main page</button>
+                    <button id="confirmNo" class="confirm-stay">Stay on reception page</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showNotification(event) {
+                event.preventDefault();
+                const form = document.getElementById('rsvpReception');
+                const modal = document.getElementById('customConfirm');
+                const confirmLeave = document.getElementsByClassName('confirm-leave')[0];
+                const confirmStay = document.getElementsByClassName('confirm-stay')[0];
+                const confirmMessage = document.getElementById('confirmMessage');
+
+                confirmMessage.innerHTML = '<h2>Thank you for RSVPing to the reception!</h2><p>We look forward to seeing you on the 8th of June.</p>';
+                modal.style.display = 'block';
+        
+                confirmLeave.onclick = function() {
+                    modal.style.display = 'none';
+                    submitFormAndRedirect(form, "/");
+                }
+
+                confirmStay.onclick = function() {
+                    modal.style.display = 'none';
+                    submitFormAndRedirect(form, "/reception");
+                }
+        
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }
+
+            function submitFormAndRedirect(form, url) {
+                const formData = new FormData(form);
+                let formDataString = '';
+                formData.forEach((value, key) => {
+                    formDataString += `${key}: ${value}\n`;
+                });
+                alert(formDataString);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new URLSearchParams(formData),
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = url;
+                    } else {
+                        console.error("Form submission failed:", response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error("Form submission error:", error);
+                });
+            }
+          </script>
     </body>
 </html>

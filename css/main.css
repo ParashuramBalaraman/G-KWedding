@@ -84,7 +84,7 @@ h0{
 
 /* Close button */
 .close-btn {
-    background-color: #f44336;
+    background-color: #8b7156;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -584,4 +584,82 @@ section{
     font-size: 1.1rem;
     color: #fff;
     font-weight: 500;
+}
+
+
+/* Wedding RSVP Alert Box*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: rgb(132, 163, 168);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 5%;
+    border: 1px solid #888;
+    width: 95%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    border-radius: 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding-bottom: 0%;
+}
+
+.close-btn {
+    color: #aaa;
+    font-weight: bold;
+    bottom: 0%;
+    border-radius: 10rem;
+}
+
+.confirm-stay {
+    background-color: #8b7156;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    font-size: medium;
+    bottom: 2%;
+    border-radius: 5rem;
+    margin-left: 2%;
+}
+
+.confirm-leave {
+    background-color: #8b7156;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    font-size: medium;
+    bottom: 0%;
+    border-radius: 5rem;
+    margin-right: 2%;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

@@ -96,3 +96,5 @@ function submitForm(form){
     console.log(form.name.value);
     form.reset();
 }
+
+

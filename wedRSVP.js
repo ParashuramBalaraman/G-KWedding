@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 mongoose.connect("mongodb+srv://boompow13579:JuSlFk18EBKWOPZE@wedding.oaw6b1f.mongodb.net/?retryWrites=true&w=majority")
@@ -11,7 +13,7 @@ mongoose.connect("mongodb+srv://boompow13579:JuSlFk18EBKWOPZE@wedding.oaw6b1f.mo
 //RSVP Schema
 const rsvpSchema = {
     name: String,
-    attendees: Number,
+    attendees: String,
     requirements: String,
     phone: String,
     message: String
@@ -24,7 +26,7 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 })
 
-app.post("/", function(req, res){
+app.post("/", async function(req, res){
     let newRSVP = new wedding({
         name: req.body.name,
         attendees: req.body.attendees,
@@ -32,9 +34,13 @@ app.post("/", function(req, res){
         phone: req.body.phone,
         message: req.body.message
     })
-    newRSVP.save();
-    window.alert("Thank you for RSVPing to the Wedding")
-    res.redirect("/");
+    try {
+        await newRSVP.save();
+        res.redirect("/");
+    } catch (err) {
+        res.status(500).json({ success: false });
+    }
+    
 })
 
 
@@ -51,14 +57,18 @@ app.get("/reception", function(req, res){
     res.sendFile(__dirname + "/reception.html");
 })
 
-app.post("/reception", function(req, res){
+app.post("/reception", async function(req, res){
     let newRSVP = new reception({
         attendees: req.body.attendees,
         requirements: req.body.requirements,
         phone: req.body.phone,
     })
-    newRSVP.save();
-    res.redirect("/");
+    try {
+        await newRSVP.save();
+        res.end();
+    } catch (err) {
+        res.status(500).json({ success: false });
+    }
 })
 
 const port = process.env.PORT || 3000;
