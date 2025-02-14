@@ -267,7 +267,6 @@
                 formData.forEach((value, key) => {
                     formDataString += `${key}: ${value}\n`;
                 });
-                alert(formDataString);
                 fetch(form.action, {
                     method: 'POST',
                     body: new URLSearchParams(formData),
