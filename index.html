@@ -201,8 +201,16 @@
               <h1 style="font-size:x-large;">RSVP Here</h1>
               <form id="rsvpWedding" method="post" action="/" onsubmit="showNotification(event);">
                 <input type = "text" class = "form-control" name = "name" placeholder="Family Name" id="name" required>
-                <input type = "text" class = "form-control" name = "attendees" placeholder="Number of people attending", required>
-                <input type = "text" class = "form-control" name = "phone" placeholder="Phone number", required>
+                <label for="attending">Are you attending the wedding?</label>
+                <div>
+                  <button type="button" class="btn-trans btn-rounded" id="btnYes" onclick="setAttending(true)">Yes</button>
+                  <button type="button" class="btn-trans btn-rounded" id="btnNo" onclick="setAttending(false)">No</button>
+                </div>
+                <input type="hidden" id="attending" name="attending">
+                <div id="attendingFields" class="hidden">
+                  <input type="text" class="form-control" name="attendees" placeholder="Number of people attending">
+                  <input type="text" class="form-control" name="phone" placeholder="Phone number">
+                </div>
                 <textarea placeholder="Message" name = "message" rows = "6"></textarea>
                 <button type="submit" class="submit-btn">Send Now</button>
                 <!-- <button type = "submit" class = "submit-btn" onlclick="submitForm(this.form)">Send Now</button> -->
@@ -220,6 +228,31 @@
             </div>
 
             <script>
+              function setAttending(isAttending) {
+                const attendingInput = document.getElementById('attending');
+                const attendingFields = document.getElementById('attendingFields');
+                const attendeesInput = document.querySelector('input[name="attendees"]');
+                const phoneInput = document.querySelector('input[name="phone"]');
+                const btnYes = document.getElementById('btnYes');
+                const btnNo = document.getElementById('btnNo');
+
+                attendingInput.value = isAttending ? 'yes' : 'no';
+                attendingFields.classList.toggle('hidden', !isAttending);
+
+                // Toggle selected class
+                if (isAttending) {
+                  phoneInput.setAttribute('required', 'required');
+                  attendeesInput.setAttribute('required', 'required');
+                  btnYes.classList.add('btn-selected');
+                  btnNo.classList.remove('btn-selected');
+                } else {
+                  phoneInput.removeAttribute('required');
+                  attendeesInput.removeAttribute('required');
+                  btnYes.classList.remove('btn-selected');
+                  btnNo.classList.add('btn-selected');
+                }
+              }
+
               function showNotification(event) {
                   event.preventDefault();
                   const form = document.getElementById('rsvpWedding');

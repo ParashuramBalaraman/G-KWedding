@@ -208,19 +208,29 @@ section{
     color: #fff;
     transition: var(--transition);
 }
+.btn-rounded {
+    border: 3.5px solid var(--night-rider);
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+}
+.btn-selected {
+    background-color: #8b7156;
+    color: #fff;
+  }
 .btn-trans:hover{
     background: var(--mount-meadow);
     border-color: var(--mount-meadow);
 }
 .btn-white{
     background: var(--night-rider);
-    color: #8b7156;
+    color: white;
     transition: var(--transition);
     border-color: var(--night-rider);
 }
 .btn-white:hover{
     background: transparent;
-    color: #fff;
+    color: #8b7156;
 }
 .btn-alt{
     background: var(--mount-meadow);
@@ -231,6 +241,9 @@ section{
     background: var(--night-rider);
     border-color: var(--night-rider);
     color: #8b7156;
+}
+.hidden {
+    display: none;
 }
 
 

@@ -13,6 +13,7 @@ mongoose.connect("mongodb+srv://boompow13579:JuSlFk18EBKWOPZE@wedding.oaw6b1f.mo
 //RSVP Schema
 const rsvpSchema = {
     name: String,
+    attending: String,
     attendees: String,
     requirements: String,
     phone: String,
@@ -29,6 +30,7 @@ app.get("/", function(req, res){
 app.post("/", async function(req, res){
     let newRSVP = new wedding({
         name: req.body.name,
+        attending: req.body.attending,
         attendees: req.body.attendees,
         requirements: req.body.requirements,
         phone: req.body.phone,
@@ -46,6 +48,7 @@ app.post("/", async function(req, res){
 
 const recSchema = new mongoose.Schema({
     attendees: Array,
+    attending: String,
     requirements: String,
     phone: String,
 });
@@ -60,6 +63,7 @@ app.get("/reception", function(req, res){
 app.post("/reception", async function(req, res){
     let newRSVP = new reception({
         attendees: req.body.attendees,
+        attending: req.body.attending,
         requirements: req.body.requirements,
         phone: req.body.phone,
     })
