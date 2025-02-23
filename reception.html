@@ -276,7 +276,7 @@
                 const confirmStay = document.getElementsByClassName('confirm-stay')[0];
                 const confirmMessage = document.getElementById('confirmMessage');
 
-                confirmMessage.innerHTML = '<h2>Thank you for RSVPing to the reception!</h2><p>We look forward to seeing you on the 8th of June.</p>';
+                confirmMessage.innerHTML = '<h2>Thank you for RSVPing to the reception!</h2>';
                 modal.style.display = 'block';
         
                 confirmLeave.onclick = function() {
@@ -289,11 +289,6 @@
                     submitFormAndRedirect(form, "/reception");
                 }
         
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = 'none';
-                    }
-                }
             }
 
             function submitFormAndRedirect(form, url) {

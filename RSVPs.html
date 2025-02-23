@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>RSVPs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>RSVPs</h1>
+    <button id="showWeddingRSVPs">Show Wedding RSVPs</button>
+    <button id="showReceptionRSVPs">Show Reception RSVPs</button>
+
+    <div id="weddingRSVPs" class="hidden">
+        <h2>Wedding RSVPs</h2>
+        <table id="wedRsvpTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Attending</th>
+                    <th>Number of People</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="receptionRSVPs" class="hidden">
+        <h2>Reception RSVPs</h2>
+        <table id="recRsvpTable">
+            <thead>
+                <tr>
+                    <th>Attendees</th>
+                    <th>Attending</th>
+                    <th>Dietary Requirements</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('showWeddingRSVPs').addEventListener('click', function() {
+                document.getElementById('weddingRSVPs').classList.remove('hidden');
+                document.getElementById('receptionRSVPs').classList.add('hidden');
+                fetchWeddingRSVPs();
+            });
+
+            document.getElementById('showReceptionRSVPs').addEventListener('click', function() {
+                document.getElementById('receptionRSVPs').classList.remove('hidden');
+                document.getElementById('weddingRSVPs').classList.add('hidden');
+                fetchReceptionRSVPs();
+            });
+
+            function fetchWeddingRSVPs() {
+                fetch('/wed/rsvps')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById('wedRsvpTable').getElementsByTagName('tbody')[0];
+                        tableBody.innerHTML = ''; // Clear existing data
+                        data.forEach(rsvp => {
+                            const row = tableBody.insertRow();
+                            row.insertCell(0).textContent = rsvp.name;
+                            row.insertCell(1).textContent = rsvp.attending;
+                            row.insertCell(2).textContent = rsvp.attendees;
+                            row.insertCell(3).textContent = rsvp.phone;
+                            row.insertCell(4).textContent = rsvp.message;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+
+            function fetchReceptionRSVPs() {
+                fetch('/rec/rsvps')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById('recRsvpTable').getElementsByTagName('tbody')[0];
+                        tableBody.innerHTML = ''; // Clear existing data
+                        data.forEach(rsvp => {
+                            const row = tableBody.insertRow();
+                            row.insertCell(0).textContent = rsvp.attendees.join(', ');
+                            row.insertCell(1).textContent = rsvp.attending;
+                            row.insertCell(2).textContent = rsvp.requirements;
+                            row.insertCell(3).textContent = rsvp.phone;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            }
+        });
+    </script>
+</body>
+</html>

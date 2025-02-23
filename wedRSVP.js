@@ -75,6 +75,31 @@ app.post("/reception", async function(req, res){
     }
 })
 
+// Endpoint to get all Wedding RSVPs
+app.get("/wed/rsvps", async function(req, res) {
+    try {
+        const rsvps = await wedding.find();
+        res.json(rsvps);
+    } catch (err) {
+        res.status(500).json({ success: false });
+    }
+})
+
+// Endpoint to get all Reception RSVPs
+app.get("/rec/rsvps", async function(req, res){
+    try {
+        const rsvps = await reception.find();
+        res.json(rsvps);
+    } catch (err) {
+        res.status(500).json({ success: false });
+    }
+})
+
+// Route to serve RSVPs.html
+app.get("/rsvps", function(req, res){
+    res.sendFile(__dirname + "/RSVPs.html");
+})
+
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("server is running on 3000");

@@ -217,7 +217,7 @@
               </form>
 
               <!-- Custom Alert Modal -->
-              <div id="customAlert" class="modal">
+              <div id="customAlert" class="modal" data-bs-backdrop="static">
                 <div class="modal-content">
                     <div id="alertMessage" style="font-family: 'Hind Siliguri', sans-serif; font-weight: bold;"></div>
                     <div class="modal-footer">
@@ -259,8 +259,13 @@
                   const modal = document.getElementById('customAlert');
                   const closeBtn = document.getElementsByClassName('close-btn')[0];
                   const alertMessage = document.getElementById('alertMessage');
+                  const attending = document.getElementById('attending').value;
 
-                  alertMessage.innerHTML = '<p>Thank you for RSVPing to the wedding!</p><h5>We look forward to seeing you on the 7th of June 2025.</h5>';
+                  if (attending === 'yes') {
+                      alertMessage.innerHTML = '<p>Thank you for RSVPing to the wedding!</p><h5>We look forward to seeing you on the 7th of June 2025. Please take a look at the details section before the wedding.</h5>';
+                  } else {
+                      alertMessage.innerHTML = '<p>Thank you for letting us know!</p><h5>We are sorry you cannot make it, but we appreciate your response.</h5>';
+                  }
                   modal.style.display = 'block';
           
                   closeBtn.onclick = function() {
@@ -268,11 +273,7 @@
                       form.submit();
                   }
           
-                  window.onclick = function(event) {
-                      if (event.target == modal) {
-                          modal.style.display = 'none';
-                      }
-                  }
+                  
               }
             </script>
             
