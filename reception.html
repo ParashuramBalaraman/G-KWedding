@@ -21,6 +21,10 @@
                 background-color: #8b7156;
                 color: #fff;
             }
+            .error-message {
+                color: red;
+                display: none;
+            }
         </style>
     </head>
     
@@ -222,7 +226,8 @@
                     <input type = "text" class = "form-control" name = "requirements" placeholder="Dietary requirements">
                     <input type = "text" class = "form-control" name = "phone" placeholder="Phone number">
                 </div>
-                <button type = "submit" class = "submit-btn">Send Now</button>
+                <div class="error-message" id="error-message">Please select whether you are attending or not.</div>
+                <button type="submit" class="submit-btn">Send Now</button>
                 </form>
 
 
@@ -278,8 +283,21 @@
                 const confirmLeave = document.getElementsByClassName('confirm-leave')[0];
                 const confirmStay = document.getElementsByClassName('confirm-stay')[0];
                 const confirmMessage = document.getElementById('confirmMessage');
+                const attending = document.getElementById('attending').value;
+                const errorMessage = document.getElementById('error-message');
 
-                confirmMessage.innerHTML = '<h2>Thank you for RSVPing to the reception!</h2>';
+                if (attending === '') {
+                    errorMessage.style.display = 'block';
+                    return;
+                } else {
+                    errorMessage.style.display = 'none';
+                }
+
+                if (attending === 'yes') {
+                    confirmMessage.innerHTML = '<p>Thank you for RSVPing to the reception!</p><h5>We look forward to seeing you on the 8th of June 2025.</h5>';
+                } else {
+                    confirmMessage.innerHTML = '<p>Thank you for letting us know!</p><h5>We are sorry you cannot make it, but we appreciate your response.</h5>';
+                }
                 modal.style.display = 'block';
         
                 confirmLeave.onclick = function() {

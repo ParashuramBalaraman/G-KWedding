@@ -21,6 +21,12 @@
     <link rel = "stylesheet" href = "resources/animate.css-main/animate.css">
     <!-- custom (main) css -->
     <link rel="stylesheet" href="css/main.css">
+    <style>
+      .error-message {
+          color: red;
+          display: none;
+      }
+    </style>
   </head>
   <body>
     
@@ -206,6 +212,7 @@
                   <button type="button" class="btn-trans btn-rounded" id="btnYes" onclick="setAttending(true)">Yes</button>
                   <button type="button" class="btn-trans btn-rounded" id="btnNo" onclick="setAttending(false)">No</button>
                 </div>
+                <div class="error-message" id="error-message">Please select whether you are attending or not.</div>
                 <input type="hidden" id="attending" name="attending">
                 <div id="attendingFields" class="hidden">
                   <input type="text" class="form-control" name="attendees" placeholder="Number of people attending">
@@ -260,6 +267,14 @@
                   const closeBtn = document.getElementsByClassName('close-btn')[0];
                   const alertMessage = document.getElementById('alertMessage');
                   const attending = document.getElementById('attending').value;
+                  const errorMessage = document.getElementById('error-message');
+
+                  if (attending === '') {
+                      errorMessage.style.display = 'block';
+                      return;
+                  } else {
+                      errorMessage.style.display = 'none';
+                  }
 
                   if (attending === 'yes') {
                       alertMessage.innerHTML = '<p>Thank you for RSVPing to the wedding!</p><h5>We look forward to seeing you on the 7th of June 2025. Please take a look at the details section before the wedding.</h5>';
