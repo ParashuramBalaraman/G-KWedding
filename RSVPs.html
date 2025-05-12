@@ -24,12 +24,24 @@
         .hidden {
             display: none;
         }
+        .totals {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>RSVPs</h1>
     <button id="showWeddingRSVPs">Show Wedding RSVPs</button>
     <button id="showReceptionRSVPs">Show Reception RSVPs</button>
+
+    <div class="totals">
+        <span id="weddingTotal">Wedding Total: 0</span> | 
+        <span id="receptionTotal">Reception Total: 0</span>
+    </div>
 
     <div id="weddingRSVPs" class="hidden">
         <h2>Wedding RSVPs</h2>
@@ -68,6 +80,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const weddingTotalElement = document.getElementById('weddingTotal');
+            const receptionTotalElement = document.getElementById('receptionTotal');
+
             document.getElementById('showWeddingRSVPs').addEventListener('click', function() {
                 document.getElementById('weddingRSVPs').classList.remove('hidden');
                 document.getElementById('receptionRSVPs').classList.add('hidden');
@@ -86,7 +101,13 @@
                     .then(data => {
                         const tableBody = document.getElementById('wedRsvpTable').getElementsByTagName('tbody')[0];
                         tableBody.innerHTML = ''; // Clear existing data
+                        let total = 0;
+
                         data.forEach(rsvp => {
+                            if (!rsvp.attending || rsvp.attending.toLowerCase() === 'yes') {
+                                total += parseInt(rsvp.attendees || 0, 10);
+                            }
+
                             const row = tableBody.insertRow();
                             row.insertCell(0).textContent = rsvp.name;
                             row.insertCell(1).textContent = rsvp.attending;
@@ -94,6 +115,8 @@
                             row.insertCell(3).textContent = rsvp.phone;
                             row.insertCell(4).textContent = rsvp.message;
                         });
+
+                        weddingTotalElement.textContent = `Wedding Total: ${total}`;
                     })
                     .catch(error => console.error('Error fetching data:', error));
             }
@@ -104,13 +127,21 @@
                     .then(data => {
                         const tableBody = document.getElementById('recRsvpTable').getElementsByTagName('tbody')[0];
                         tableBody.innerHTML = ''; // Clear existing data
+                        let total = 0;
+
                         data.forEach(rsvp => {
+                            if (rsvp.attending.toLowerCase() === 'yes') {
+                                total += rsvp.attendees.length;
+                            }
+
                             const row = tableBody.insertRow();
                             row.insertCell(0).textContent = rsvp.attendees.join(', ');
                             row.insertCell(1).textContent = rsvp.attending;
                             row.insertCell(2).textContent = rsvp.requirements;
                             row.insertCell(3).textContent = rsvp.phone;
                         });
+
+                        receptionTotalElement.textContent = `Reception Total: ${total}`;
                     })
                     .catch(error => console.error('Error fetching data:', error));
             }
